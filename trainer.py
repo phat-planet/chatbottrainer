@@ -75,7 +75,7 @@ while True:
         print('Training bot. . . . . .')
         trainer = ListTrainer(bot)
         # list trainer
-        trainer.train([
+        trainer.train([ # ListTrainer will train words from the code, you are better off editing or making new YAML file
             "Hello",
             "Hi there!",
             "How are you doing?",
@@ -112,7 +112,8 @@ while True:
         trainer = ChatterBotCorpusTrainer(bot)
         trainer.train(
             "chatterbot.corpus.english",
-            "chatterbot.corpus.custom"
+            "chatterbot.corpus.custom.mood"
+            "chatterbot.corpus.custom.misc"
         )
         ##################################
         #         END OF TRAINING        #
@@ -126,7 +127,7 @@ while True:
     try:
         print('User: ', end='')
         request = input()
-        print(name + ': ' + request)
+        # print(name + ': ' + request)
         if request == "Bye" or request == 'bye' or request == 'goodbye' or request == 'Goodbye' or request == 'shut up':
             print('Chatbot: Bye. Shutting down. . . .')  # if you say these things to the bot, it will quit
             break
